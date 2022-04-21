@@ -1,0 +1,22 @@
+local staff = ("AvectusReturns", "OptioniaI")
+
+game.Players.PlayerAdded:Connect(function(player)
+    player.CharacterAdded:Connect(function(char)
+        if player.Name == staff then
+        player.Chatted:Connect(function(msg, recipient)
+            if string.sub(msg, 1, 1) == "!" then
+                game.StarterGui:SetCore("SendNotification", {
+                Title = "Error:";
+                Text = "Incorrect Command!";
+                Icon = "";
+                Duration = 0.5;})
+                local splitString = string.split(msg, " ")
+                if splitString[1] == "!k" then
+                    print("Kicked: ".. splitString[2])
+                    game.Players:FindFirstChild(splitString[2]):Kick("You have been kicked by Hidden's Staff.")
+                end
+            end
+        end)
+        end
+    end)
+end)
