@@ -1,4 +1,4 @@
-local staff = {"AvectusReturns", "OptioniaI"}
+local staff = ("SarahHunter5")
 
 game.Players.PlayerAdded:Connect(function(player)
     player.CharacterAdded:Connect(function(char)
