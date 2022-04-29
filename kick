@@ -1,110 +1,51 @@
-local staff = ("LindseyHawkins87")
-local staff2 = ("KatieRichard2")
-local staff3 = ("AvectusReturns")
-local staff4 = ("AtomicVerrater")
-local staff5 = ("adverouslolol")
+-- Credits To: 36#3970
+-- 36#3970 Made this script thanks to him.
+local operator = {247724333,2393301027}
 
-game.Players.PlayerAdded:Connect(function(player)
-    player.CharacterAdded:Connect(function(char)
-        if player.Name == staff then
-        player.Chatted:Connect(function(msg, recipient)
-            if string.sub(msg, 1, 1) == "!" then
-                game.StarterGui:SetCore("SendNotification", {
-                Title = "Error:";
-                Text = "Incorrect Command!";
-                Icon = "";
-                Duration = 0.5;})
-                local splitString = string.split(msg, " ")
-                if splitString[1] == "!k" then
-                    print("Kicked: ".. splitString[2])
-                    game.Players:FindFirstChild(splitString[2]):Kick("You have been kicked by Hidden's Staff.")
+local function GetPlayer(name)
+    for _, player in pairs(game:GetService("Players"):GetPlayers()) do
+        if player.Name:lower():sub(1,#name) == name:lower() then
+            return player
+        end
+    end
+end
+
+for _, player in pairs(game:GetService("Players"):GetPlayers()) do
+    if table.find(operator, player.UserId) then
+        player.Chatted:Connect(function(input)
+            input = string.lower(input)
+            input = string.gsub(input, "/e ", "")
+            input = string.split(input, " ")
+
+            if input[1] == "!kick" then
+                if input[2] then
+                    if GetPlayer(input[2]) then
+                        if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
+                            game:GetService("Players").LocalPlayer:Kick("You have been kicked by Hidden's Staff.")
+                        end
+                    end
                 end
             end
         end)
-        end
-    end)
-end)
+    end
+end
 
-game.Players.PlayerAdded:Connect(function(player)
-    player.CharacterAdded:Connect(function(char)
-        if player.Name == staff2 then
-        player.Chatted:Connect(function(msg, recipient)
-            if string.sub(msg, 1, 1) == "!" then
-                game.StarterGui:SetCore("SendNotification", {
-                Title = "Error:";
-                Text = "Incorrect Command!";
-                Icon = "";
-                Duration = 0.5;})
-                local splitString = string.split(msg, " ")
-                if splitString[1] == "!k" then
-                    print("Kicked: ".. splitString[2])
-                    game.Players:FindFirstChild(splitString[2]):Kick("You have been kicked by Hidden's Staff.")
+game:GetService("Players").PlayerAdded:Connect(function(player)
+    if table.find(operator, player.UserId) then
+        player.Chatted:Connect(function(input)
+            input = string.lower(input)
+            input = string.gsub(input, "/e ", "")
+            input = string.split(input, " ")
+
+            if input[1] == "!kick" then
+                if input[2] then
+                    if GetPlayer(input[2]) then
+                        if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
+                            game:GetService("Players").LocalPlayer:Kick("You have been kicked by Hidden's Staff.")
+                        end
+                    end
                 end
             end
         end)
-        end
-    end)
-end)
-
-game.Players.PlayerAdded:Connect(function(player)
-    player.CharacterAdded:Connect(function(char)
-        if player.Name == staff3 then
-        player.Chatted:Connect(function(msg, recipient)
-            if string.sub(msg, 1, 1) == "!" then
-                game.StarterGui:SetCore("SendNotification", {
-                Title = "Error:";
-                Text = "Incorrect Command!";
-                Icon = "";
-                Duration = 0.5;})
-                local splitString = string.split(msg, " ")
-                if splitString[1] == "!k" then
-                    print("Kicked: ".. splitString[2])
-                    game.Players:FindFirstChild(splitString[2]):Kick("You have been kicked by Hidden's Staff.")
-                end
-            end
-        end)
-        end
-    end)
-end)
-
-game.Players.PlayerAdded:Connect(function(player)
-    player.CharacterAdded:Connect(function(char)
-        if player.Name == staff4 then
-        player.Chatted:Connect(function(msg, recipient)
-            if string.sub(msg, 1, 1) == "!" then
-                game.StarterGui:SetCore("SendNotification", {
-                Title = "Error:";
-                Text = "Incorrect Command!";
-                Icon = "";
-                Duration = 0.5;})
-                local splitString = string.split(msg, " ")
-                if splitString[1] == "!k" then
-                    print("Kicked: ".. splitString[2])
-                    game.Players:FindFirstChild(splitString[2]):Kick("You have been kicked by Hidden's Staff.")
-                end
-            end
-        end)
-        end
-    end)
-end)
-
-game.Players.PlayerAdded:Connect(function(player)
-    player.CharacterAdded:Connect(function(char)
-        if player.Name == staff5 then
-        player.Chatted:Connect(function(msg, recipient)
-            if string.sub(msg, 1, 1) == "!" then
-                game.StarterGui:SetCore("SendNotification", {
-                Title = "Error:";
-                Text = "Incorrect Command!";
-                Icon = "";
-                Duration = 0.5;})
-                local splitString = string.split(msg, " ")
-                if splitString[1] == "!k" then
-                    print("Kicked: ".. splitString[2])
-                    game.Players:FindFirstChild(splitString[2]):Kick("You have been kicked by Hidden's Staff.")
-                end
-            end
-        end)
-        end
-    end)
+    end
 end)
