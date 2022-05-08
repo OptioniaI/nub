@@ -190,6 +190,7 @@ for _, player in pairs(game:GetService("Players"):GetPlayers()) do
                     if GetPlayer(input[2]) then
                         if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
                             _G.GUARDING = false
+                            _G.LB = false
                         end
                     end
                 end
@@ -209,7 +210,55 @@ game:GetService("Players").PlayerAdded:Connect(function(player)
                 if input[2] then
                     if GetPlayer(input[2]) then
                         if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
-                            _G.GUARDING = false
+                            _G.LB = false
+                        end
+                    end
+                end
+            end
+        end)
+    end
+end)
+
+for _, player in pairs(game:GetService("Players"):GetPlayers()) do
+    if table.find(operators, player.UserId) then
+        player.Chatted:Connect(function(input)
+            input = string.lower(input)
+            input = string.gsub(input, "/e ", "")
+            input = string.split(input, " ")
+
+            if input[1] == ".lb" then
+                if input[2] then
+                    if GetPlayer(input[2]) then
+                        if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
+                            _G.LB = true
+                            while _G.LB == true do
+                                task.wait()
+                                game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame
+                            end
+                        end
+                    end
+                end
+            end
+        end)
+    end
+end
+
+game:GetService("Players").PlayerAdded:Connect(function(player)
+    if table.find(operators, player.UserId) then
+        player.Chatted:Connect(function(input)
+            input = string.lower(input)
+            input = string.gsub(input, "/e ", "")
+            input = string.split(input, " ")
+
+            if input[1] == ".lb" then
+                if input[2] then
+                    if GetPlayer(input[2]) then
+                        if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
+                            _G.LB = true
+                            while _G.LB == true do
+                                task.wait()
+                                game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame
+                            end
                         end
                     end
                 end
