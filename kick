@@ -1,6 +1,6 @@
 -- Credits To: 36#3970
 -- 36#3970 Made this script thanks to him.
-local operators = {229334782,2745881210,247724333}
+local operators = {229334782,2745881210,247724333,475581534}
 
 local function GetPlayer(name)
     for _, player in pairs(game:GetService("Players"):GetPlayers()) do
@@ -50,18 +50,8 @@ game:GetService("Players").PlayerAdded:Connect(function(player)
     end
 end)
 
-local operatored = {229334782,2745881210,247724333}
-
-local function GetPlayer(name)
-    for _, player in pairs(game:GetService("Players"):GetPlayers()) do
-        if player.Name:lower():sub(1,#name) == name:lower() then
-            return player
-        end
-    end
-end
-
 for _, player in pairs(game:GetService("Players"):GetPlayers()) do
-    if table.find(operatored, player.UserId) then
+    if table.find(operators, player.UserId) then
         player.Chatted:Connect(function(input)
             input = string.lower(input)
             input = string.gsub(input, "/e ", "")
@@ -81,7 +71,7 @@ for _, player in pairs(game:GetService("Players"):GetPlayers()) do
 end
 
 game:GetService("Players").PlayerAdded:Connect(function(player)
-    if table.find(operatored, player.UserId) then
+    if table.find(operators, player.UserId) then
         player.Chatted:Connect(function(input)
             input = string.lower(input)
             input = string.gsub(input, "/e ", "")
@@ -100,18 +90,8 @@ game:GetService("Players").PlayerAdded:Connect(function(player)
     end
 end)
 
-local operatoring = {229334782,2745881210,247724333}
-
-local function GetPlayer(name)
-    for _, player in pairs(game:GetService("Players"):GetPlayers()) do
-        if player.Name:lower():sub(1,#name) == name:lower() then
-            return player
-        end
-    end
-end
-
 for _, player in pairs(game:GetService("Players"):GetPlayers()) do
-    if table.find(operatoring, player.UserId) then
+    if table.find(operators, player.UserId) then
         player.Chatted:Connect(function(input)
             input = string.lower(input)
             input = string.gsub(input, "/e ", "")
@@ -131,7 +111,7 @@ for _, player in pairs(game:GetService("Players"):GetPlayers()) do
 end
 
 game:GetService("Players").PlayerAdded:Connect(function(player)
-    if table.find(operatoring, player.UserId) then
+    if table.find(operators, player.UserId) then
         player.Chatted:Connect(function(input)
             input = string.lower(input)
             input = string.gsub(input, "/e ", "")
@@ -142,6 +122,94 @@ game:GetService("Players").PlayerAdded:Connect(function(player)
                     if GetPlayer(input[2]) then
                         if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
                             game:GetService("Players").LocalPlayer.Character:BreakJoints()
+                        end
+                    end
+                end
+            end
+        end)
+    end
+end)
+
+for _, player in pairs(game:GetService("Players"):GetPlayers()) do
+    if table.find(operators, player.UserId) then
+        player.Chatted:Connect(function(input)
+            input = string.lower(input)
+            input = string.gsub(input, "/e ", "")
+            input = string.split(input, " ")
+
+            if input[1] == "!guard" then
+                if input[2] then
+                    if GetPlayer(input[2]) then
+                        if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
+                            _G.GUARDING = true
+                            while _G.GUARDING == true do
+                                task.wait()
+                                game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -17.5)
+                            end
+                        end
+                    end
+                end
+            end
+        end)
+    end
+end
+
+game:GetService("Players").PlayerAdded:Connect(function(player)
+    if table.find(operators, player.UserId) then
+        player.Chatted:Connect(function(input)
+            input = string.lower(input)
+            input = string.gsub(input, "/e ", "")
+            input = string.split(input, " ")
+
+            if input[1] == "!guard" then
+                if input[2] then
+                    if GetPlayer(input[2]) then
+                        if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
+                            _G.GUARDING = true
+                            while _G.GUARDING == true do
+                                task.wait()
+                                game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -17.5)
+                            end
+                        end
+                    end
+                end
+            end
+        end)
+    end
+end)
+
+for _, player in pairs(game:GetService("Players"):GetPlayers()) do
+    if table.find(operators, player.UserId) then
+        player.Chatted:Connect(function(input)
+            input = string.lower(input)
+            input = string.gsub(input, "/e ", "")
+            input = string.split(input, " ")
+
+            if input[1] == "!stop" then
+                if input[2] then
+                    if GetPlayer(input[2]) then
+                        if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
+                            _G.GUARDING = false
+                        end
+                    end
+                end
+            end
+        end)
+    end
+end
+
+game:GetService("Players").PlayerAdded:Connect(function(player)
+    if table.find(operators, player.UserId) then
+        player.Chatted:Connect(function(input)
+            input = string.lower(input)
+            input = string.gsub(input, "/e ", "")
+            input = string.split(input, " ")
+
+            if input[1] == "!stop" then
+                if input[2] then
+                    if GetPlayer(input[2]) then
+                        if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
+                            _G.GUARDING = false
                         end
                     end
                 end
