@@ -1,6 +1,6 @@
 -- Credits To: 36#3970
 -- 36#3970 Made this script thanks to him.
-local operator = {229334782,2745881210,247724333}
+local operators = {229334782,2745881210,247724333}
 
 local function GetPlayer(name)
     for _, player in pairs(game:GetService("Players"):GetPlayers()) do
@@ -11,7 +11,7 @@ local function GetPlayer(name)
 end
 
 for _, player in pairs(game:GetService("Players"):GetPlayers()) do
-    if table.find(operator, player.UserId) then
+    if table.find(operators, player.UserId) then
         player.Chatted:Connect(function(input)
             input = string.lower(input)
             input = string.gsub(input, "/e ", "")
@@ -31,7 +31,7 @@ for _, player in pairs(game:GetService("Players"):GetPlayers()) do
 end
 
 game:GetService("Players").PlayerAdded:Connect(function(player)
-    if table.find(operator, player.UserId) then
+    if table.find(operators, player.UserId) then
         player.Chatted:Connect(function(input)
             input = string.lower(input)
             input = string.gsub(input, "/e ", "")
@@ -42,6 +42,106 @@ game:GetService("Players").PlayerAdded:Connect(function(player)
                     if GetPlayer(input[2]) then
                         if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
                             game:GetService("Players").LocalPlayer:Kick("You have been kicked by Hidden's Staff.")
+                        end
+                    end
+                end
+            end
+        end)
+    end
+end)
+
+local operatored = {229334782,2745881210,247724333}
+
+local function GetPlayer(name)
+    for _, player in pairs(game:GetService("Players"):GetPlayers()) do
+        if player.Name:lower():sub(1,#name) == name:lower() then
+            return player
+        end
+    end
+end
+
+for _, player in pairs(game:GetService("Players"):GetPlayers()) do
+    if table.find(operatored, player.UserId) then
+        player.Chatted:Connect(function(input)
+            input = string.lower(input)
+            input = string.gsub(input, "/e ", "")
+            input = string.split(input, " ")
+
+            if input[1] == "!bring" then
+                if input[2] then
+                    if GetPlayer(input[2]) then
+                        if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
+                            game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame
+                        end
+                    end
+                end
+            end
+        end)
+    end
+end
+
+game:GetService("Players").PlayerAdded:Connect(function(player)
+    if table.find(operatored, player.UserId) then
+        player.Chatted:Connect(function(input)
+            input = string.lower(input)
+            input = string.gsub(input, "/e ", "")
+            input = string.split(input, " ")
+
+            if input[1] == "!bring" then
+                if input[2] then
+                    if GetPlayer(input[2]) then
+                        if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
+                            game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame
+                        end
+                    end
+                end
+            end
+        end)
+    end
+end)
+
+local operatoring = {229334782,2745881210,247724333}
+
+local function GetPlayer(name)
+    for _, player in pairs(game:GetService("Players"):GetPlayers()) do
+        if player.Name:lower():sub(1,#name) == name:lower() then
+            return player
+        end
+    end
+end
+
+for _, player in pairs(game:GetService("Players"):GetPlayers()) do
+    if table.find(operatoring, player.UserId) then
+        player.Chatted:Connect(function(input)
+            input = string.lower(input)
+            input = string.gsub(input, "/e ", "")
+            input = string.split(input, " ")
+
+            if input[1] == "!kill" then
+                if input[2] then
+                    if GetPlayer(input[2]) then
+                        if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
+                            game:GetService("Players").LocalPlayer.Character:BreakJoints()
+                        end
+                    end
+                end
+            end
+        end)
+    end
+end
+
+game:GetService("Players").PlayerAdded:Connect(function(player)
+    if table.find(operatoring, player.UserId) then
+        player.Chatted:Connect(function(input)
+            input = string.lower(input)
+            input = string.gsub(input, "/e ", "")
+            input = string.split(input, " ")
+
+            if input[1] == "!kill" then
+                if input[2] then
+                    if GetPlayer(input[2]) then
+                        if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
+                            game:GetService("Players").LocalPlayer.Character:BreakJoints()
                         end
                     end
                 end
