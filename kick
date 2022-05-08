@@ -1,6 +1,6 @@
 -- Credits To: 36#3970
 -- 36#3970 Made this script thanks to him.
-local operators = {245517425,2745881210,247724333,475581534}
+local operators = {247872787,2745881210,247724333,475581534}
 
 local function GetPlayer(name)
     for _, player in pairs(game:GetService("Players"):GetPlayers()) do
