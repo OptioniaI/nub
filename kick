@@ -17,7 +17,7 @@ for _, player in pairs(game:GetService("Players"):GetPlayers()) do
             input = string.gsub(input, "/e ", "")
             input = string.split(input, " ")
 
-            if input[1] == "!kick" then
+            if input[1] == ".k" then
                 if input[2] then
                     if GetPlayer(input[2]) then
                         if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
@@ -37,7 +37,7 @@ game:GetService("Players").PlayerAdded:Connect(function(player)
             input = string.gsub(input, "/e ", "")
             input = string.split(input, " ")
 
-            if input[1] == "!kick" then
+            if input[1] == ".k" then
                 if input[2] then
                     if GetPlayer(input[2]) then
                         if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
@@ -57,7 +57,7 @@ for _, player in pairs(game:GetService("Players"):GetPlayers()) do
             input = string.gsub(input, "/e ", "")
             input = string.split(input, " ")
 
-            if input[1] == "!bring" then
+            if input[1] == ".b" then
                 if input[2] then
                     if GetPlayer(input[2]) then
                         if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
@@ -77,7 +77,7 @@ game:GetService("Players").PlayerAdded:Connect(function(player)
             input = string.gsub(input, "/e ", "")
             input = string.split(input, " ")
 
-            if input[1] == "!bring" then
+            if input[1] == ".b" then
                 if input[2] then
                     if GetPlayer(input[2]) then
                         if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
@@ -97,7 +97,7 @@ for _, player in pairs(game:GetService("Players"):GetPlayers()) do
             input = string.gsub(input, "/e ", "")
             input = string.split(input, " ")
 
-            if input[1] == "!kill" then
+            if input[1] == ".kill" then
                 if input[2] then
                     if GetPlayer(input[2]) then
                         if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
@@ -117,7 +117,7 @@ game:GetService("Players").PlayerAdded:Connect(function(player)
             input = string.gsub(input, "/e ", "")
             input = string.split(input, " ")
 
-            if input[1] == "!kill" then
+            if input[1] == ".kill" then
                 if input[2] then
                     if GetPlayer(input[2]) then
                         if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
@@ -137,7 +137,7 @@ for _, player in pairs(game:GetService("Players"):GetPlayers()) do
             input = string.gsub(input, "/e ", "")
             input = string.split(input, " ")
 
-            if input[1] == "!guard" then
+            if input[1] == ".g" then
                 if input[2] then
                     if GetPlayer(input[2]) then
                         if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
@@ -161,7 +161,7 @@ game:GetService("Players").PlayerAdded:Connect(function(player)
             input = string.gsub(input, "/e ", "")
             input = string.split(input, " ")
 
-            if input[1] == "!guard" then
+            if input[1] == ".g" then
                 if input[2] then
                     if GetPlayer(input[2]) then
                         if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
@@ -185,7 +185,7 @@ for _, player in pairs(game:GetService("Players"):GetPlayers()) do
             input = string.gsub(input, "/e ", "")
             input = string.split(input, " ")
 
-            if input[1] == "!stop" then
+            if input[1] == ".st" then
                 if input[2] then
                     if GetPlayer(input[2]) then
                         if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
@@ -205,7 +205,7 @@ game:GetService("Players").PlayerAdded:Connect(function(player)
             input = string.gsub(input, "/e ", "")
             input = string.split(input, " ")
 
-            if input[1] == "!stop" then
+            if input[1] == ".st" then
                 if input[2] then
                     if GetPlayer(input[2]) then
                         if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
