@@ -210,6 +210,7 @@ game:GetService("Players").PlayerAdded:Connect(function(player)
                 if input[2] then
                     if GetPlayer(input[2]) then
                         if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
+                            _G.GUARDING = false
                             _G.LB = false
                         end
                     end
