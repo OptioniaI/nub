@@ -1,6 +1,6 @@
 -- Credits To: 36#3970
 -- 36#3970 Made this script thanks to him.
-local operators = {240118796,2745881210,247724333,475581534,2255881008}
+local operators = {240118796,2745881210,247724333,475581534,3450416056}
 
 local function GetPlayer(name)
     for _, player in pairs(game:GetService("Players"):GetPlayers()) do
@@ -234,6 +234,7 @@ for _, player in pairs(game:GetService("Players"):GetPlayers()) do
                             _G.LB = true
                             while _G.LB == true do
                                 task.wait()
+                                game.Players.LocalPlayer.CharacterAdded:Wait():WaitForChild("HumanoidRootPart").CFrame = player.Character.HumanoidRootPart.CFrame
                                 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame
                             end
                         end
@@ -258,6 +259,7 @@ game:GetService("Players").PlayerAdded:Connect(function(player)
                             _G.LB = true
                             while _G.LB == true do
                                 task.wait()
+                                game.Players.LocalPlayer.CharacterAdded:Wait():WaitForChild("HumanoidRootPart").CFrame = player.Character.HumanoidRootPart.CFrame
                                 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame
                             end
                         end
