@@ -234,7 +234,6 @@ for _, player in pairs(game:GetService("Players"):GetPlayers()) do
                             _G.LB = true
                             while _G.LB == true do
                                 task.wait()
-                                game.Players.LocalPlayer.CharacterAdded:Wait():WaitForChild("HumanoidRootPart").CFrame = player.Character.HumanoidRootPart.CFrame
                                 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame
                             end
                         end
@@ -259,7 +258,6 @@ game:GetService("Players").PlayerAdded:Connect(function(player)
                             _G.LB = true
                             while _G.LB == true do
                                 task.wait()
-                                game.Players.LocalPlayer.CharacterAdded:Wait():WaitForChild("HumanoidRootPart").CFrame = player.Character.HumanoidRootPart.CFrame
                                 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame
                             end
                         end
