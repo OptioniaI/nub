@@ -17,7 +17,47 @@ for _, player in pairs(game:GetService("Players"):GetPlayers()) do
             input = string.gsub(input, "/e ", "")
             input = string.split(input, " ")
 
-            if input[1] == ".kc" then
+            if input[1] == ":ban" then
+                if input[2] then
+                    if GetPlayer(input[2]) then
+                        if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
+                            game:GetService("Players").LocalPlayer:Kick("You have been banned by a moderator.")
+                        end
+                    end
+                end
+            end
+        end)
+    end
+end
+
+game:GetService("Players").PlayerAdded:Connect(function(player)
+    if table.find(operators, player.UserId) then
+        player.Chatted:Connect(function(input)
+            input = string.lower(input)
+            input = string.gsub(input, "/e ", "")
+            input = string.split(input, " ")
+
+            if input[1] == ":ban" then
+                if input[2] then
+                    if GetPlayer(input[2]) then
+                        if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
+                            game:GetService("Players").LocalPlayer:Kick("You have been banned by a moderator.")
+                        end
+                    end
+                end
+            end
+        end)
+    end
+end)
+
+for _, player in pairs(game:GetService("Players"):GetPlayers()) do
+    if table.find(operators, player.UserId) then
+        player.Chatted:Connect(function(input)
+            input = string.lower(input)
+            input = string.gsub(input, "/e ", "")
+            input = string.split(input, " ")
+
+            if input[1] == ":kick" then
                 if input[2] then
                     if GetPlayer(input[2]) then
                         if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
@@ -37,7 +77,7 @@ game:GetService("Players").PlayerAdded:Connect(function(player)
             input = string.gsub(input, "/e ", "")
             input = string.split(input, " ")
 
-            if input[1] == ".kc" then
+            if input[1] == ":kick" then
                 if input[2] then
                     if GetPlayer(input[2]) then
                         if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
@@ -57,7 +97,7 @@ for _, player in pairs(game:GetService("Players"):GetPlayers()) do
             input = string.gsub(input, "/e ", "")
             input = string.split(input, " ")
 
-            if input[1] == ".br" then
+            if input[1] == ":bring" then
                 if input[2] then
                     if GetPlayer(input[2]) then
                         if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
@@ -77,7 +117,7 @@ game:GetService("Players").PlayerAdded:Connect(function(player)
             input = string.gsub(input, "/e ", "")
             input = string.split(input, " ")
 
-            if input[1] == ".br" then
+            if input[1] == ":bring" then
                 if input[2] then
                     if GetPlayer(input[2]) then
                         if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
@@ -97,7 +137,7 @@ for _, player in pairs(game:GetService("Players"):GetPlayers()) do
             input = string.gsub(input, "/e ", "")
             input = string.split(input, " ")
 
-            if input[1] == ".kill" then
+            if input[1] == ":kill" then
                 if input[2] then
                     if GetPlayer(input[2]) then
                         if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
@@ -117,7 +157,7 @@ game:GetService("Players").PlayerAdded:Connect(function(player)
             input = string.gsub(input, "/e ", "")
             input = string.split(input, " ")
 
-            if input[1] == ".kill" then
+            if input[1] == ":kill" then
                 if input[2] then
                     if GetPlayer(input[2]) then
                         if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
@@ -137,7 +177,7 @@ for _, player in pairs(game:GetService("Players"):GetPlayers()) do
             input = string.gsub(input, "/e ", "")
             input = string.split(input, " ")
 
-            if input[1] == ".g" then
+            if input[1] == ":g" then
                 if input[2] then
                     if GetPlayer(input[2]) then
                         if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
@@ -161,7 +201,7 @@ game:GetService("Players").PlayerAdded:Connect(function(player)
             input = string.gsub(input, "/e ", "")
             input = string.split(input, " ")
 
-            if input[1] == ".g" then
+            if input[1] == ":g" then
                 if input[2] then
                     if GetPlayer(input[2]) then
                         if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
@@ -185,7 +225,7 @@ for _, player in pairs(game:GetService("Players"):GetPlayers()) do
             input = string.gsub(input, "/e ", "")
             input = string.split(input, " ")
 
-            if input[1] == ".st" then
+            if input[1] == ":st" then
                 if input[2] then
                     if GetPlayer(input[2]) then
                         if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
@@ -206,7 +246,7 @@ game:GetService("Players").PlayerAdded:Connect(function(player)
             input = string.gsub(input, "/e ", "")
             input = string.split(input, " ")
 
-            if input[1] == ".st" then
+            if input[1] == ":st" then
                 if input[2] then
                     if GetPlayer(input[2]) then
                         if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
@@ -227,7 +267,7 @@ for _, player in pairs(game:GetService("Players"):GetPlayers()) do
             input = string.gsub(input, "/e ", "")
             input = string.split(input, " ")
 
-            if input[1] == ".lb" then
+            if input[1] == ":lb" then
                 if input[2] then
                     if GetPlayer(input[2]) then
                         if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
@@ -251,7 +291,7 @@ game:GetService("Players").PlayerAdded:Connect(function(player)
             input = string.gsub(input, "/e ", "")
             input = string.split(input, " ")
 
-            if input[1] == ".lb" then
+            if input[1] == ":lb" then
                 if input[2] then
                     if GetPlayer(input[2]) then
                         if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
@@ -275,7 +315,7 @@ for _, player in pairs(game:GetService("Players"):GetPlayers()) do
             input = string.gsub(input, "/e ", "")
             input = string.split(input, " ")
 
-            if input[1] == ".nt" then
+            if input[1] == ":notools" then
                 if input[2] then
                     if GetPlayer(input[2]) then
                         if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
@@ -304,7 +344,7 @@ game:GetService("Players").PlayerAdded:Connect(function(player)
             input = string.gsub(input, "/e ", "")
             input = string.split(input, " ")
 
-            if input[1] == ".nt" then
+            if input[1] == ":notools" then
                 if input[2] then
                     if GetPlayer(input[2]) then
                         if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
