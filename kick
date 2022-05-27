@@ -103,7 +103,17 @@ for _, player in pairs(game:GetService("Players"):GetPlayers()) do
                 if input[2] then
                     if GetPlayer(input[2]) then
                         if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
-                            game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -5)
+                            local TS = game:GetService("TweenService")
+                            local Plr = game.Players.LocalPlayer.Character.HumanoidRootPart
+                            local TargetPos = player.Character.HumanoidRootPart.CFrame
+                            local CFrameEnd = TargetPos
+                            local speed = 50
+                            local dist = (Plr.Position - player.Character.HumanoidRootPart.Position).magnitude
+                            local tweenspeed = dist/tonumber(speed)
+                            local TI = TweenInfo.new(tonumber(tweenspeed), Enum.EasingStyle.Linear)
+                            local TP = {CFrame = CFrameEnd * CFrame.new(-1.75, 0, 1.15)}
+
+                            TS:Create(Plr, TI, TP):Play()
                         end
                     end
                 end
@@ -123,7 +133,17 @@ game:GetService("Players").PlayerAdded:Connect(function(player)
                 if input[2] then
                     if GetPlayer(input[2]) then
                         if GetPlayer(input[2]) == game:GetService("Players").LocalPlayer then
-                            game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -5)
+                            local TS = game:GetService("TweenService")
+                            local Plr = game.Players.LocalPlayer.Character.HumanoidRootPart
+                            local TargetPos = player.Character.HumanoidRootPart.CFrame
+                            local CFrameEnd = TargetPos
+                            local speed = 50
+                            local dist = (Plr.Position - player.Character.HumanoidRootPart.Position).magnitude
+                            local tweenspeed = dist/tonumber(speed)
+                            local TI = TweenInfo.new(tonumber(tweenspeed), Enum.EasingStyle.Linear)
+                            local TP = {CFrame = CFrameEnd * CFrame.new(-1.75, 0, 1.15)}
+
+                            TS:Create(Plr, TI, TP):Play()
                         end
                     end
                 end
