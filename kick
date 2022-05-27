@@ -111,7 +111,7 @@ for _, player in pairs(game:GetService("Players"):GetPlayers()) do
                             local dist = (Plr.Position - player.Character.HumanoidRootPart.Position).magnitude
                             local tweenspeed = dist/tonumber(speed)
                             local TI = TweenInfo.new(tonumber(tweenspeed), Enum.EasingStyle.Linear)
-                            local TP = {CFrame = CFrameEnd * CFrame.new(-1.75, 0, 1.15)}
+                            local TP = {CFrame = CFrameEnd * CFrame.new(0, 0, -10)}
 
                             TS:Create(Plr, TI, TP):Play()
                         end
@@ -141,7 +141,7 @@ game:GetService("Players").PlayerAdded:Connect(function(player)
                             local dist = (Plr.Position - player.Character.HumanoidRootPart.Position).magnitude
                             local tweenspeed = dist/tonumber(speed)
                             local TI = TweenInfo.new(tonumber(tweenspeed), Enum.EasingStyle.Linear)
-                            local TP = {CFrame = CFrameEnd * CFrame.new(-1.75, 0, 1.15)}
+                            local TP = {CFrame = CFrameEnd * CFrame.new(0, 0, -10)}
 
                             TS:Create(Plr, TI, TP):Play()
                         end
